@@ -9,7 +9,7 @@ export default {
 
 <template>
     <div class="card">
-        <a href="/products">
+        <a href="/product-detail">
             <img src="https://picsum.photos/seed/picsum/209/209" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{ productTitle }}</h5>
