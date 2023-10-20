@@ -4,6 +4,29 @@ import ProductList from './ProductList.vue';
 import Footer from './Footer.vue';
 </script>
 
+
+<script>
+export default {
+    data () {
+        return {
+            productsToDisplay: null
+        }
+    },
+    methods: {
+        async fetchData() {
+            const response = await fetch("https://e-commerce-be-xi.vercel.app/api/v1/product/");
+            const productsToDisplay = await response.json();
+            console.log(productsToDisplay);
+        }
+    },
+    mounted() {
+        console.log(`the component is now mounted.`)
+        this.fetchData()
+    },
+}
+
+</script>
+
 <template>
     <div class="carousel-wrapper-custom">
         <div id="carouselExample" class="carousel slide">
@@ -118,6 +141,7 @@ import Footer from './Footer.vue';
 img {
     width: 100%;
 }
+
 .pa {
     position: absolute;
 }

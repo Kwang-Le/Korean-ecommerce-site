@@ -10,6 +10,9 @@ export default {
         return {
             productsList: [{name: "iphone 10", price: "1000"}, {name: "iphone 11", price: "1500"}, {name: "iphone 12", price: "2000"}, {name: "iphone 15", price: "3000"}]
         }
+    },
+    props: {
+        product: String,
     }
 }
 </script>

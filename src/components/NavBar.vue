@@ -26,10 +26,10 @@ export default {
       <div class="offcanvas-body justify-content-between align-items-center">
         <ul class="navbar-nav justify-content-center flex-wrap pe-1000">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/home">Home</a>
+            <a class="nav-link active" aria-current="page" href="./home">Home</a>
           </li>
           <li v-for="item in categoriesList" class="nav-item">
-            <a class="nav-link" href="/products">{{ item }}</a>
+            <a class="nav-link" href="./products">{{ item }}</a>
           </li>
         </ul>
         <form class="d-flex mt-3" role="search">
