@@ -6,22 +6,19 @@ import ReviewCommentsSection from './ReviewCommentsSection.vue';
 
 <script>
 export default {
-    setup() {
-        const spaceBetween = 10;
-        const onProgress = (e) => {
+    data() {
+        return{
+            spaceBetween: 10,
+        }
+    },
+    methods: {
+        onProgress(e) {
             const [swiper, progress] = e.detail;
             console.log(progress)
-        };
-
-        const onSlideChange = (e) => {
+        },
+        onSlideChange(e) {
             console.log('slide changed')
         }
-
-        return {
-            spaceBetween,
-            onProgress,
-            onSlideChange,
-        };
     }
 }
 </script>
