@@ -31,7 +31,7 @@
 .xingxing {
     margin: 5px 5px 0 0 ;
 }
-.p {
+p {
     margin-top: 5px;
     margin-left: 10px;
 }

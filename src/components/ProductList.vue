@@ -12,7 +12,10 @@ export default {
         }
     },
     props: {
-        product: String,
+        productsToDisplay: null,
+    },
+    mounted() {
+        console.log(this.productsToDisplay)
     }
 }
 </script>
@@ -20,8 +23,8 @@ export default {
 <template>
     <div class="container">
         <div class="row">
-            <div v-for="product in productsList" class="col-md-3 col-6 my-2">
-                <ProductCard :productTitle="product.name" :price="product.price"></ProductCard>
+            <div v-for="product in this.productsToDisplay" class="col-md-3 col-6 my-2">
+                <ProductCard :productTitle="product.title ? product.title : 'N/A'" :price="product.price"></ProductCard>
             </div>
         </div>
     </div>

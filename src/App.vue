@@ -1,6 +1,7 @@
 <script setup>
 import HomePage from './components/HomePage.vue'
 import NavBar from './components/NavBar.vue';
+
 </script>
 
 <template>
@@ -8,4 +9,9 @@ import NavBar from './components/NavBar.vue';
       <RouterView />
 </template>
 
-<style scoped></style>
+<style>
+ a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+ }
+</style>

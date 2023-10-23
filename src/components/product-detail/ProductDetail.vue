@@ -1,5 +1,6 @@
 <script setup>
 import BottomNavBar from './BottomNavBar.vue';
+import CustomNotice from './CustomNotice.vue';
 import ProductItems from './ProductItems.vue';
 import ReviewCommentsSection from './ReviewCommentsSection.vue';
 </script>
@@ -7,7 +8,7 @@ import ReviewCommentsSection from './ReviewCommentsSection.vue';
 <script>
 export default {
     data() {
-        return{
+        return {
             spaceBetween: 10,
         }
     },
@@ -24,6 +25,7 @@ export default {
 </script>
 
 <template>
+    <CustomNotice></CustomNotice>
     <div class="d-flex flex-column align-items-center">
         <div class="card">
             <div class="slider-wrapper">
@@ -32,12 +34,18 @@ export default {
                 }" :breakpoints="{
     768: { slidesPerView: 1, },
 }" @progress="onProgress" @slidechange="onSlideChange">
-                    <swiper-slide><img src="https://picsum.photos/seed/picsum/209/209" class="card-img-top"
+                    <swiper-slide><img src="../../../public/umbrella-product/slider_1.jpg" class="card-img-top"
                             alt="..."></swiper-slide>
-                    <swiper-slide><img src="https://picsum.photos/seed/picsum/209/209" class="card-img-top"
+                    <swiper-slide><img src="../../../public/umbrella-product/slider_2.jpg" class="card-img-top"
                             alt="..."></swiper-slide>
-                    <swiper-slide><img src="https://picsum.photos/seed/picsum/209/209" class="card-img-top"
+                    <swiper-slide><img src="../../../public/umbrella-product/slider_3.jpg" class="card-img-top"
                             alt="..."></swiper-slide>
+                    <swiper-slide><img src="../../../public/umbrella-product/slider_4.jpg" class="card-img-top"
+                            alt="..."></swiper-slide>
+                    <!-- <swiper-slide><img src="../../../public/umbrella-product/slider_5.jpg" class="card-img-top"
+                            alt="..."></swiper-slide> -->
+                    <!-- <swiper-slide><img src="../../../public/umbrella-product/slider_6.jpg" class="card-img-top"
+                            alt="..."></swiper-slide> -->
                 </swiper-container>
             </div>
             <div class="card-body">
@@ -55,12 +63,19 @@ export default {
                     </div>
                 </div>
                 <p class="sale-title card-text">남성 배기핏 면 마 바지</p>
-                <p class="promotion-text card-text" >프리미엄 면 마 혼방 원단으로 최고의 착용감 제공, 배기핏으로 다리라인 수식에 탁월합니다! 지금 추가 구매시 ₩9,900! </p>
+                <p class="promotion-text card-text">프리미엄 면 마 혼방 원단으로 최고의 착용감 제공, 배기핏으로 다리라인 수식에 탁월합니다! 지금 추가 구매시 ₩9,900!
+                </p>
             </div>
         </div>
         <ProductItems></ProductItems>
         <ReviewCommentsSection></ReviewCommentsSection>
         <BottomNavBar></BottomNavBar>
+        <div class="notice">
+            <img class="notice-img"
+                src="https://pic.compgoo.com/uploads/546b8ba4659b480393601963ab17a410.jpg?_t=1697876982&_s=2ed8813533314f1ea974632bef81f84f&_token=103cecea93c0b367d8be7fe03cc0f585&_e=10&_c=57209bbf72831121a02d0c990e48673a"
+                alt="">
+        </div>
+
     </div>
 </template>
 
@@ -70,9 +85,10 @@ export default {
     .slider-wrapper {
         max-width: 100%;
     }
+
     .card {
-    max-width: 100%;
-}
+        max-width: 100%;
+    }
 }
 
 .slider-wrapper {
@@ -112,5 +128,9 @@ export default {
 
 p {
     max-width: 600px;
+}
+
+.notice-img {
+    max-width: 640px;
 }
 </style>
