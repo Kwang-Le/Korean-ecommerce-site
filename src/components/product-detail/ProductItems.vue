@@ -13,11 +13,30 @@
                 </li>
             </ul>
         </div>
-        <img style="" title="1621510646127156.gif"
-            data-original="https://pic.compgoo.com/ueditor/image/20210520/1621510646127156.gif?_t=1696604900&amp;_s=07f5a69a57f209a1ddaa2bd919d61488&amp;_token=dec73186d74d24e5c9c88e1263c9324d&amp;_e=10&amp;_c=044004b17532a65c20a96958f7dbe7ce"
-            src="https://pic.compgoo.com/ueditor/image/20210520/1621510646127156.gif?_t=1696604900&amp;_s=07f5a69a57f209a1ddaa2bd919d61488&amp;_token=dec73186d74d24e5c9c88e1263c9324d&amp;_e=10&amp;_c=044004b17532a65c20a96958f7dbe7ce"
+        <!-- <img v-for="n in 14" style=""
+            :src={ "../../../public/umbrella-product/item_n.jpg":}
+        > -->
+        <img style="" src="../../../public/umbrella-product/item_1.gif">
+        <img style="" src="../../../public/umbrella-product/item_2.jpg">
+        <img style="" src="../../../public/umbrella-product/item_3.jpg">
+        <img style="" src="../../../public/umbrella-product/item_4.jpg">
+        <img style="" src="../../../public/umbrella-product/item_5.jpg">
+        <img style="" src="../../../public/umbrella-product/item_6.jpg">
+        <img style="" src="../../../public/umbrella-product/item_7.jpg">
+        <img style="" src="../../../public/umbrella-product/item_8.jpg">
+        <img style="" src="../../../public/umbrella-product/item_9.jpg">
+        <img style="" src="../../../public/umbrella-product/item_10.gif">
+        <img style="" src="../../../public/umbrella-product/item_11.gif">
+        <img style="" src="../../../public/umbrella-product/item_12.gif">
+        <img style="" src="../../../public/umbrella-product/item_13.gif">
+        <!-- <img style="" title="1621510649632900.jpg"
+            data-original="https://pic.compgoo.com/ueditor/image/20210520/1621510649632900.jpg?_t=1697876982&amp;_s=c46e238ed48c2a910c4221aa23508e37&amp;_token=103cecea93c0b367d8be7fe03cc0f585&amp;_e=10&amp;_c=e42639ec4ed2358e813e48365e9a187c"
+            src="https://pic.compgoo.com/ueditor/image/20210520/1621510649632900.jpg?_t=1697876982&amp;_s=c46e238ed48c2a910c4221aa23508e37&amp;_token=103cecea93c0b367d8be7fe03cc0f585&amp;_e=10&amp;_c=e42639ec4ed2358e813e48365e9a187c"
             data-loaded="true">
-        <img src="https://picsum.photos/seed/picsum/209/209" class="" alt="...">
+        <img style="" title="1621510649567386.gif"
+            data-original="https://pic.compgoo.com/ueditor/image/20210520/1621510649567386.gif?_t=1697876982&amp;_s=a30cbf504d497ca49cdf57f44eae37de&amp;_token=103cecea93c0b367d8be7fe03cc0f585&amp;_e=10&amp;_c=f77b60756527e19f30196ce05951906a"
+            src="https://pic.compgoo.com/ueditor/image/20210520/1621510649567386.gif?_t=1697876982&amp;_s=a30cbf504d497ca49cdf57f44eae37de&amp;_token=103cecea93c0b367d8be7fe03cc0f585&amp;_e=10&amp;_c=f77b60756527e19f30196ce05951906a"
+            data-loaded="true"> -->
     </div>
 </template>
 
@@ -44,4 +63,5 @@
 
 .nav-link.active {
     color: #F51111 !important;
-}</style>
+}
+</style>

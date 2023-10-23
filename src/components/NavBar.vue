@@ -14,7 +14,7 @@ export default {
 <template>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Logo</a>
+    <a class="navbar-brand" href="#"><img class="logo" src="../../public/umbrella-product/logo.png" alt=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -43,3 +43,10 @@ export default {
 
 
 </template>
+
+<style scoped>
+.logo {
+  width: 40px;
+}
+
+</style>

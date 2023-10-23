@@ -1,3 +1,6 @@
+<script setup>
+
+</script>
 <template>
 <div class="bottom-nav fixed-bottom nav d-flex justify-content-center align-items-center">
     <div class="service-btn col-2 d-flex justify-content-center flex-column align-items-center ">
@@ -8,9 +11,9 @@
         <i class="bi bi-file-text"></i>
         <p>주문 조회</p>
     </div>
-    <div class="buy-btn col-8 d-flex align-items-center justify-content-center">
-        즉시구매
-    </div>
+    <router-link to="/checkout-detail" class="buy-btn col-8 d-flex align-items-center justify-content-center">
+        <p >즉시구매</p>
+    </router-link>
 </div>
 </template>
 
