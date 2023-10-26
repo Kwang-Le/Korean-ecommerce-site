@@ -9,7 +9,7 @@ import Footer from './Footer.vue';
 export default {
     data() {
         return {
-            productsToDisplay: null,
+            productsToDisplay: {},
             fetchDataCompleted: false
         }
     },
@@ -18,11 +18,12 @@ export default {
             const response = await fetch("https://e-commerce-be-xi.vercel.app/api/v1/product/");
             this.productsToDisplay = await response.json();
             console.log(this.productsToDisplay);
-            this.fetchDataCompleted = await true
         }
     },
     created() {
-        this.fetchData().then(() => this.fetchDataCompleted = true)
+        this.fetchData().then(() => this.fetchDataCompleted = true).catch((error) => {
+            console.error(error);
+        });
     },
 }
 
