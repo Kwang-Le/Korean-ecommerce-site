@@ -1,3 +1,16 @@
+<script>
+export default {
+    data() {
+        return {
+            
+        }
+    }
+    ,
+    props: {
+        quantity: Number,
+    }
+}
+</script>
 <template>
     <div class="wrapper-options">
         <div class="card">
@@ -7,7 +20,7 @@
                     <span class="addcart-single-sku col-1 flex-grow-1">(<span class="sku-title-hidden">컬러:</span>브라운
                         )</span>
                 </div>
-                <div class="addcart-specs-content">
+                <div v-for="(_, index) in quantity" :key="index" class="addcart-specs-content">
                     <div class="color">
                         <div class="header">컬러</div>
                         <div class="color-options d-flex flex-wrap">

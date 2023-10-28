@@ -8,9 +8,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">제품규격</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">상품평</a>
-                </li>
             </ul>
         </div>
         <!-- <img v-for="n in 14" style=""

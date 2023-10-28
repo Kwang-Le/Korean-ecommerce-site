@@ -1,7 +1,8 @@
 <script setup>
-import NavBar from './NavBar.vue';
 import ProductList from './ProductList.vue';
 import Footer from './Footer.vue';
+import NavBar from './NavBar.vue';
+
 </script>
 
 
@@ -30,6 +31,7 @@ export default {
 </script>
 
 <template>
+    <NavBar></NavBar>
     <div v-if="fetchDataCompleted">
         <div class="carousel-wrapper-custom">
             <div id="carouselExample" class="carousel slide">

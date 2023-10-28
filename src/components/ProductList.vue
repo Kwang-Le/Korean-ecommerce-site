@@ -1,5 +1,6 @@
 <script setup>
 import ProductCard from './ProductCard.vue';
+import NavBar from './NavBar.vue';
 
 
 </script>
@@ -21,6 +22,7 @@ export default {
 </script>
 
 <template>
+    <NavBar></NavBar>
     <div class="container">
         <div class="row">
             <!-- <div v-for="product in this.productsToDisplay" class="col-md-3 col-6 my-2">

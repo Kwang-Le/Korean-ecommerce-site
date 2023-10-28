@@ -1,27 +1,51 @@
 <script setup>
 import CheckoutAddressForm from './CheckoutAddressForm.vue';
-import CheckoutProductOptions from './CheckoutProductOptions.vue'; 
+import CheckoutProductOptions from './CheckoutProductOptions.vue';
 import CheckoutCartList from './CheckoutCartList.vue';
 import CheckoutBilling from './CheckoutBilling.vue'
 import CheckoutPayment from './CheckoutPayment.vue'
 import CheckoutBottomNav from './CheckoutBottomNav.vue';
+import TopFixedBar from '../TopFixedBar.vue';
+</script>
+
+
+<script>
+export default {
+        data() {
+            return {
+                chosenQuantity: 1,
+            }
+        },
+        methods: {
+            setQuantity(quantity) {
+                this.chosenQuantity = quantity
+            }
+        }
+}
+
 </script>
 <template>
+    <TopFixedBar></TopFixedBar>
+    <div class="spacing" style="height: 30px;"></div>
     <form action="" class="d-flex flex-column align-items-center">
         <div class="card">
             <div class="card-body">
                 <div class="product-detail d-flex flex-row">
-                    <img class="pro-img"
-                        src="../../../public/umbrella-product/slider_2.jpg" alt="">
+                    <img class="pro-img" src="../../../public/umbrella-product/slider_2.jpg" alt="">
                     <div class="pro-info">
                         <div class="title ">남성 배기핏 면 마 바지</div>
                         <div class="product-price"><span>₩37,900</span><del class="old-price">₩75,800</del></div>
                     </div>
                 </div>
                 <div class="description">프리미엄 면 마 혼방 원단으로 최고의 착용감 제공, 배기핏으로 다리라인 수식에 탁월합니다! 지금 추가 구매시 ₩9,900! </div>
+                <div class="addcart-group-buttons">
+                    <button @click="setQuantity(1)" :class="this.chosenQuantity == 1 ? 'active' : ''" class="btn-binding" type="button">1 개 ₩39,900</button>
+                    <button @click="setQuantity(2)" :class="this.chosenQuantity == 2 ? 'active' : ''" class="btn-binding" type="button">2 개 ₩55,900</button>
+                    <button @click="setQuantity(3)" :class="this.chosenQuantity == 3 ? 'active' : ''" class="btn-binding" type="button">3 개 ₩71,900</button>
+                </div>
             </div>
         </div>
-        <CheckoutProductOptions></CheckoutProductOptions>
+        <CheckoutProductOptions :quantity="chosenQuantity" ></CheckoutProductOptions>
         <CheckoutAddressForm></CheckoutAddressForm>
         <CheckoutCartList></CheckoutCartList>
         <CheckoutBilling></CheckoutBilling>
@@ -50,5 +74,21 @@ import CheckoutBottomNav from './CheckoutBottomNav.vue';
     color: #D20000;
     font-size: 14px;
     line-height: 22px;
+}
+
+.addcart-group-buttons .btn-binding {
+    display: block;
+    width: 100%;
+    border-radius: 50px;
+    margin: 10px auto;
+    border: 1px solid #bbb;
+    background: #eee;
+    position: relative;
+}
+
+.addcart-group-buttons .btn-binding.active {
+    background: #e94820;
+    border-color: #e94820;
+    color: #fff;
 }
 </style>
