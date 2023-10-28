@@ -89,7 +89,7 @@ export default {
             </div>
         </div>
         <h2 style="text-align: center;">Best Seller</h2>
-        <ProductList :productsToDisplay="productsToDisplay"></ProductList>
+        <ProductList :productsToDisplay="productsToDisplay" :displayNavBar="false"></ProductList>
         <Footer></Footer>
     </div>
 </template>

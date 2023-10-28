@@ -44,7 +44,7 @@ export default {
 
 <template>
     <CustomNotice></CustomNotice>
-    <TopFixedBar></TopFixedBar>
+    <!-- <TopFixedBar></TopFixedBar> -->
     <div class="d-flex flex-column align-items-center">
         <div class="card">
             <div class="slider-wrapper">

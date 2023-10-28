@@ -9,20 +9,17 @@ import NavBar from './NavBar.vue';
 export default {
     data() {
         return {
-            productsList: [{title: "umbrella", price: "37,900"}]
+            productsList: [{title: "umbrella", price: "37,900"}],
         }
     },
     props: {
-        productsToDisplay: null,
+        productsToDisplay: Object,
     },
-    mounted() {
-        console.log(this.productsToDisplay)
-    }
 }
 </script>
 
 <template>
-    <NavBar></NavBar>
+    <NavBar v-if="this.$route.path === '/products'"></NavBar>
     <div class="container">
         <div class="row">
             <!-- <div v-for="product in this.productsToDisplay" class="col-md-3 col-6 my-2">
