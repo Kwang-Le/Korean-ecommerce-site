@@ -18,27 +18,27 @@ export default {
             spaceBetween: 10,
         }
     },
-    setup() {
-        const onSwiper = (swiper) => {
-            console.log(swiper);
-        };
-        const onSlideChange = () => {
-            console.log('slide change');
-        };
-        return {
-            onSwiper,
-            onSlideChange,
-        };
-    },
-    // methods: {
-    //     onProgress(e) {
-    //         const [swiper, progress] = e.detail;
-    //         console.log(progress)
-    //     },
-    //     onSlideChange(e) {
-    //         console.log('slide changed')
-    //     }
-    // }
+    // setup() {
+    //     const onSwiper = (swiper) => {
+    //         console.log(swiper);
+    //     };
+    //     const onSlideChange = () => {
+    //         console.log('slide change');
+    //     };
+    //     return {
+    //         onSwiper,
+    //         onSlideChange,
+    //     };
+    // },
+    methods: {
+        onProgress(e) {
+            const [swiper, progress] = e.detail;
+            console.log(progress)
+        },
+        onSlideChange(e) {
+            console.log('slide changed')
+        }
+    }
 }
 </script>
 
