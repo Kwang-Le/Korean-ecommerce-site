@@ -10,6 +10,7 @@ export default {
     data() {
         return {
             productsList: [{title: "umbrella", price: "37,900"}],
+            path: this.$route.path
         }
     },
     props: {
@@ -19,7 +20,7 @@ export default {
 </script>
 
 <template>
-    <NavBar v-if="this.$route.path === '/products'"></NavBar>
+    <NavBar v-if="path === '/products'"></NavBar>
     <div class="container">
         <div class="row">
             <!-- <div v-for="product in this.productsToDisplay" class="col-md-3 col-6 my-2">
