@@ -14,11 +14,12 @@ export default {
         data() {
             return {
                 chosenQuantity: 1,
+                self: this,
             }
         },
         methods: {
             setQuantity(quantity) {
-                this.chosenQuantity = quantity
+                self.chosenQuantity = quantity
             }
         }
 }
@@ -39,9 +40,9 @@ export default {
                 </div>
                 <div class="description">프리미엄 면 마 혼방 원단으로 최고의 착용감 제공, 배기핏으로 다리라인 수식에 탁월합니다! 지금 추가 구매시 ₩9,900! </div>
                 <div class="addcart-group-buttons">
-                    <button @click="setQuantity(1)" :class="this.chosenQuantity == 1 ? 'active' : ''" class="btn-binding" type="button">1 개 ₩39,900</button>
-                    <button @click="setQuantity(2)" :class="this.chosenQuantity == 2 ? 'active' : ''" class="btn-binding" type="button">2 개 ₩55,900</button>
-                    <button @click="setQuantity(3)" :class="this.chosenQuantity == 3 ? 'active' : ''" class="btn-binding" type="button">3 개 ₩71,900</button>
+                    <button @click="setQuantity(1)" :class="self.chosenQuantity == 1 ? 'active' : ''" class="btn-binding" type="button">1 개 ₩39,900</button>
+                    <button @click="setQuantity(2)" :class="self.chosenQuantity == 2 ? 'active' : ''" class="btn-binding" type="button">2 개 ₩55,900</button>
+                    <button @click="setQuantity(3)" :class="self.chosenQuantity == 3 ? 'active' : ''" class="btn-binding" type="button">3 개 ₩71,900</button>
                 </div>
             </div>
         </div>
