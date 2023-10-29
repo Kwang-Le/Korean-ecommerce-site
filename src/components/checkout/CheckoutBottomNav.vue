@@ -1,7 +1,7 @@
 <template>
     <div class="bottom-nav fixed-bottom nav d-flex justify-content-center align-items-center">
     <div class="service-btn col-3 ">
-        <h3>₩ 37,900</h3>
+        <h3 style="color: red;">₩ 37,900</h3>
     </div>
     <div class="order-track-btn col-3 d-flex justify-content-end ">
         <h3>총 1 개</h3>

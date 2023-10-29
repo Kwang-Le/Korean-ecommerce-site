@@ -30,6 +30,7 @@
 }
 .xingxing {
     margin: 5px 5px 0 0 ;
+    color: red;
 }
 p {
     margin-top: 5px;

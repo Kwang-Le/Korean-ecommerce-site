@@ -3,6 +3,12 @@ import BottomNavBar from './BottomNavBar.vue';
 import CustomNotice from './CustomNotice.vue';
 import ProductItems from './ProductItems.vue';
 import ReviewCommentsSection from './ReviewCommentsSection.vue';
+import ProductDetailFooter from './ProductDetailFooter.vue';
+import TopFixedBar from '../TopFixedBar.vue';
+import { Navigation, Pagination, Scrollbar, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+
 </script>
 
 <script>
@@ -10,6 +16,7 @@ export default {
     data() {
         return {
             spaceBetween: 10,
+            modules: [Autoplay, Pagination, Navigation]
         }
     },
     methods: {
@@ -20,20 +27,27 @@ export default {
         onSlideChange(e) {
             console.log('slide changed')
         }
-    }
+    },
+    // setup() {
+    //     return {
+           
+    //     };
+    // },
 }
 </script>
 
 <template>
     <CustomNotice></CustomNotice>
+    <!-- <TopFixedBar></TopFixedBar> -->
     <div class="d-flex flex-column align-items-center">
         <div class="card">
             <div class="slider-wrapper">
-                <swiper-container :slides-per-view="1" :space-between="spaceBetween" :centered-slides="true" :pagination="{
-                    hideOnClick: true
-                }" :breakpoints="{
+                <swiper-container :autoplay="{ delay: 2000,disableOnInteraction: false }" :slides-per-view="1" :space-between="spaceBetween"
+                    :centered-slides="true" :pagination="{
+                        hideOnClick: true
+                    }" :breakpoints="{
     768: { slidesPerView: 1, },
-}" @progress="onProgress" @slidechange="onSlideChange">
+}" @progress="onProgress" @slidechange="onSlideChange" :modules="modules">
                     <swiper-slide><img src="../../../public/umbrella-product/slider_1.jpg" class="card-img-top"
                             alt="..."></swiper-slide>
                     <swiper-slide><img src="../../../public/umbrella-product/slider_2.jpg" class="card-img-top"
@@ -48,34 +62,30 @@ export default {
                             alt="..."></swiper-slide> -->
                 </swiper-container>
             </div>
-            <div class="card-body">
-                <div class="price-box d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-center price-block">
-                        <span class="final-price gui-money" cur-data="37900" cur-saleid="MTAwMDI1MzU0NA==">₩ <span
-                                class="format-price">37,900</span></span>
-                    </div>
-                    <span class="sale-off">50%할인 </span>
+            <div class="py-2 px-3 price-box d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center price-block">
+                    <span class="final-price gui-money" cur-data="37900" cur-saleid="MTAwMDI1MzU0NA==">₩ <span
+                            class="format-price">37,900</span></span>
                 </div>
-                <div class="price-box" style="margin-top:5px;">
-                    <div class="service-item d-flex align-items-start">
-                        <span>무료배송</span>
-                        <span>7일 시용 기간</span>
-                    </div>
-                </div>
-                <p class="sale-title card-text">남성 배기핏 면 마 바지</p>
-                <p class="promotion-text card-text">프리미엄 면 마 혼방 원단으로 최고의 착용감 제공, 배기핏으로 다리라인 수식에 탁월합니다! 지금 추가 구매시 ₩9,900!
-                </p>
+                <span class="promotion-flag px-3">2 개 ₩55,900 </span>
+            </div>
+            <p class="sale-title card-text p-2">신형 44공 로켓포 버블건</p>
+            <div class="p-2 service-item d-flex align-items-center flex-wrap">
+                <span><i class="bi bi-coin"></i>지급 보호</span>
+                <span><i class="bi bi-truck"></i>무료배송</span>
+                <span><i class="bi bi-7-circle"></i>7일 시용 기간</span>
             </div>
         </div>
-        <ProductItems></ProductItems>
         <ReviewCommentsSection></ReviewCommentsSection>
-        <BottomNavBar></BottomNavBar>
+        <ProductItems></ProductItems>
         <div class="notice">
             <img class="notice-img"
                 src="https://pic.compgoo.com/uploads/546b8ba4659b480393601963ab17a410.jpg?_t=1697876982&_s=2ed8813533314f1ea974632bef81f84f&_token=103cecea93c0b367d8be7fe03cc0f585&_e=10&_c=57209bbf72831121a02d0c990e48673a"
                 alt="">
         </div>
-
+        <ProductDetailFooter></ProductDetailFooter>
+        <div class="spacing" style="height: 100px;"></div>
+        <BottomNavBar></BottomNavBar>
     </div>
 </template>
 
@@ -91,39 +101,35 @@ export default {
     }
 }
 
+.sale-title {
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
 .slider-wrapper {
     max-width: 640px;
 }
 
+.price-box {
+    background: linear-gradient(to right, #fe8d01, #ff01fd);
+}
+
 .price-box .final-price {
-    color: #F51111;
+    color: #fff;
     font-size: 1.85rem;
     font-weight: 600;
 }
 
-.price-box .sale-off {
-    color: #F51111;
-    border: 1px solid #F51111;
-    border-radius: 4px;
-    height: 21px;
-    line-height: 21px;
-    padding: 0 3px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
+.price-box .promotion-flag {
+    background: #fff;
+    border-radius: 45px;
+    color: #ff03f9;
+    font-weight: bolder;
 }
 
-.price-box .service-item span {
-    color: #fff;
-    background: #F51111;
-    padding: 0 5px;
-    border-radius: 6px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    -ms-border-radius: 6px;
-    -o-border-radius: 6px;
-    margin: 0 5px 5px 0;
+.service-item span {
+    color: #666;
+    margin-right: 15px;
 }
 
 p {

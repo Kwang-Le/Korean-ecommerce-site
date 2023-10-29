@@ -1,5 +1,6 @@
 <script setup>
 import ProductCard from './ProductCard.vue';
+import NavBar from './NavBar.vue';
 
 
 </script>
@@ -8,23 +9,25 @@ import ProductCard from './ProductCard.vue';
 export default {
     data() {
         return {
-            productsList: [{name: "iphone 10", price: "1000"}, {name: "iphone 11", price: "1500"}, {name: "iphone 12", price: "2000"}, {name: "iphone 15", price: "3000"}]
+            productsList: [{title: "umbrella", price: "37,900"}],
+            path: this.$route.path
         }
     },
     props: {
-        productsToDisplay: null,
+        productsToDisplay: Object,
     },
-    mounted() {
-        console.log(this.productsToDisplay)
-    }
 }
 </script>
 
 <template>
+    <NavBar v-if="path === '/products'"></NavBar>
     <div class="container">
         <div class="row">
-            <div v-for="product in this.productsToDisplay" class="col-md-3 col-6 my-2">
+            <!-- <div v-for="product in this.productsToDisplay" class="col-md-3 col-6 my-2">
                 <ProductCard :productTitle="product.title ? product.title : 'N/A'" :price="product.price"></ProductCard>
+            </div> -->
+            <div class="col-md-3 col-6 my-2">
+                <ProductCard :productTitle="'umbrella'" :price="'37,900'"></ProductCard>
             </div>
         </div>
     </div>

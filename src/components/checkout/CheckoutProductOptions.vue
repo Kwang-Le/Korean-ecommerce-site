@@ -1,3 +1,24 @@
+<script>
+export default {
+    data() {
+        return {
+            isActiveList: [false, false, false],
+            self: this
+        }
+    }
+    ,
+    props: {
+        quantity: Number,
+    },
+    methods: {
+        toggleActive(self, index) {
+            self.isActiveList = self.isActiveList.map((val) => false)
+            self.isActiveList[index] = true
+            console.log(self.isActiveList)
+        }
+    }
+}
+</script>
 <template>
     <div class="wrapper-options">
         <div class="card">
@@ -7,40 +28,25 @@
                     <span class="addcart-single-sku col-1 flex-grow-1">(<span class="sku-title-hidden">컬러:</span>브라운
                         )</span>
                 </div>
-                <div class="addcart-specs-content">
+                <div v-for="(_, index) in quantity" :key="index" class="addcart-specs-content">
                     <div class="color">
                         <div class="header">컬러</div>
                         <div class="color-options d-flex flex-wrap">
-                            <div class="color-options-img d-flex flex-column align-items-center">
+                            <div @click="toggleActive(self, 0)" :class="isActiveList[0] ? 'active' : ''" id="0"  class="color-options-img d-flex flex-column align-items-center">
                                 <img
                                     src="../../../public/umbrella-product/yellow.jpg">
                                 <p>그레이</p>
                             </div>
-                            <div class="color-options-img d-flex flex-column align-items-center">
+                            <div @click="toggleActive(self, 1)" :class="isActiveList[1] ? 'active' : ''" class="color-options-img d-flex flex-column align-items-center">
                                 <img
                                     src="../../../public/umbrella-product/red.jpg">
                                 <p>그레이</p>
                             </div>
-                            <div class="color-options-img d-flex flex-column align-items-center">
+                            <div @click="toggleActive(self, 2)" :class="isActiveList[2] ? 'active' : ''" class="color-options-img d-flex flex-column align-items-center">
                                 <img
                                     src="../../../public/umbrella-product/blue.jpg">
                                 <p>그레이</p>
                             </div>
-                        </div>
-
-                    </div>
-                    <div class="size">
-                        <div class="header">사이즈</div>
-                        <div class="size-options d-flex flex-wrap">
-                            <span>
-                                M
-                            </span>
-                            <span>
-                                L
-                            </span>
-                            <span>
-                                XL
-                            </span>
                         </div>
                     </div>
                 </div>
@@ -55,6 +61,10 @@
 }
 .color-options-img img {
     width: 100px;
+}
+
+.color-options-img.active img {
+    border: 2px solid #ec4f2a;
 }
 
 .header {

@@ -1,7 +1,8 @@
 <script setup>
-import NavBar from './NavBar.vue';
 import ProductList from './ProductList.vue';
 import Footer from './Footer.vue';
+import NavBar from './NavBar.vue';
+
 </script>
 
 
@@ -10,7 +11,7 @@ export default {
     data() {
         return {
             productsToDisplay: null,
-            fetchDataCompleted: false
+            fetchDataCompleted: true
         }
     },
     methods: {
@@ -18,17 +19,19 @@ export default {
             const response = await fetch("https://e-commerce-be-xi.vercel.app/api/v1/product/");
             this.productsToDisplay = await response.json();
             console.log(this.productsToDisplay);
-            this.fetchDataCompleted = await true
         }
     },
     created() {
-        this.fetchData().then(() => this.fetchDataCompleted = true)
+        // this.fetchData().then(() => this.fetchDataCompleted = true).catch((error) => {
+        //     console.error(error);
+        // });
     },
 }
 
 </script>
 
 <template>
+    <NavBar></NavBar>
     <div v-if="fetchDataCompleted">
         <div class="carousel-wrapper-custom">
             <div id="carouselExample" class="carousel slide">
@@ -86,7 +89,7 @@ export default {
             </div>
         </div>
         <h2 style="text-align: center;">Best Seller</h2>
-        <ProductList :productsToDisplay="productsToDisplay"></ProductList>
+        <ProductList :productsToDisplay="productsToDisplay" :displayNavBar="false"></ProductList>
         <Footer></Footer>
     </div>
 </template>
