@@ -5,7 +5,7 @@ import ProductItems from './ProductItems.vue';
 import ReviewCommentsSection from './ReviewCommentsSection.vue';
 import ProductDetailFooter from './ProductDetailFooter.vue';
 import TopFixedBar from '../TopFixedBar.vue';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 
@@ -16,20 +16,9 @@ export default {
     data() {
         return {
             spaceBetween: 10,
+            modules: [Autoplay, Pagination, Navigation]
         }
     },
-    // setup() {
-    //     const onSwiper = (swiper) => {
-    //         console.log(swiper);
-    //     };
-    //     const onSlideChange = () => {
-    //         console.log('slide change');
-    //     };
-    //     return {
-    //         onSwiper,
-    //         onSlideChange,
-    //     };
-    // },
     methods: {
         onProgress(e) {
             const [swiper, progress] = e.detail;
@@ -38,7 +27,12 @@ export default {
         onSlideChange(e) {
             console.log('slide changed')
         }
-    }
+    },
+    // setup() {
+    //     return {
+           
+    //     };
+    // },
 }
 </script>
 
@@ -48,11 +42,12 @@ export default {
     <div class="d-flex flex-column align-items-center">
         <div class="card">
             <div class="slider-wrapper">
-                <swiper-container :slides-per-view="1" :space-between="spaceBetween" :centered-slides="true" :pagination="{
-                    hideOnClick: true
-                }" :breakpoints="{
+                <swiper-container :autoplay="{ delay: 2000,disableOnInteraction: false }" :slides-per-view="1" :space-between="spaceBetween"
+                    :centered-slides="true" :pagination="{
+                        hideOnClick: true
+                    }" :breakpoints="{
     768: { slidesPerView: 1, },
-}" @progress="onProgress" @slidechange="onSlideChange">
+}" @progress="onProgress" @slidechange="onSlideChange" :modules="modules">
                     <swiper-slide><img src="../../../public/umbrella-product/slider_1.jpg" class="card-img-top"
                             alt="..."></swiper-slide>
                     <swiper-slide><img src="../../../public/umbrella-product/slider_2.jpg" class="card-img-top"

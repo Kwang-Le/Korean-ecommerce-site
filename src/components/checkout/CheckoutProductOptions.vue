@@ -48,21 +48,6 @@ export default {
                                 <p>그레이</p>
                             </div>
                         </div>
-
-                    </div>
-                    <div class="size">
-                        <div class="header">사이즈</div>
-                        <div class="size-options d-flex flex-wrap">
-                            <span>
-                                M
-                            </span>
-                            <span>
-                                L
-                            </span>
-                            <span>
-                                XL
-                            </span>
-                        </div>
                     </div>
                 </div>
             </div>
