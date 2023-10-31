@@ -1,9 +1,20 @@
 <script setup>
+import TopFixedBar from '../TopFixedBar.vue';
 
+
+</script>
+<script>
+export default {
+    methods: {
+        activateMess() {
+            FB.CustomerChat.show()
+        }
+    }
+}
 </script>
 <template>
 <div class="bottom-nav fixed-bottom nav d-flex justify-content-center align-items-center">
-    <div class="service-btn col-2 d-flex justify-content-center flex-column align-items-center ">
+    <div class="service-btn col-2 d-flex justify-content-center flex-column align-items-center " @click="activateMess">
         <i class="bi bi-chat-dots"></i>
         <p>서비스센터</p>
     </div>
