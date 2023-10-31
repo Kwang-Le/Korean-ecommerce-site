@@ -29,6 +29,14 @@ export default {
 </template>
 
 <style scoped>
+@media only screen and (max-width: 640px) {
+    .order-track-btn {
+        font-size: 12px;
+    }
+    .service-btn {
+        font-size: 12px;
+    }
+}
 .bottom-nav {
     padding: 3px 0;
     margin: auto;

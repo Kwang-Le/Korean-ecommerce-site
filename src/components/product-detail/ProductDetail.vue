@@ -51,10 +51,6 @@ export default {
                             alt="..."></swiper-slide>
                     <swiper-slide><img src="../../../public/umbrella-product/slider_4.jpg" class="card-img-top"
                             alt="..."></swiper-slide>
-                    <!-- <swiper-slide><img src="../../../public/umbrella-product/slider_5.jpg" class="card-img-top"
-                            alt="..."></swiper-slide> -->
-                    <!-- <swiper-slide><img src="../../../public/umbrella-product/slider_6.jpg" class="card-img-top"
-                            alt="..."></swiper-slide> -->
                 </swiper-container>
             </div>
             <div class="py-2 px-3 price-box d-flex align-items-center justify-content-between">
@@ -94,6 +90,7 @@ export default {
     .card {
         max-width: 100%;
     }
+
 }
 
 .sale-title {
@@ -130,8 +127,8 @@ export default {
 p {
     max-width: 600px;
 }
-
 .notice-img {
+    width: 100%;
     max-width: 640px;
 }
 </style>

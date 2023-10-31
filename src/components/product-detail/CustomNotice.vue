@@ -112,7 +112,6 @@ export default {
 	top: 350px;
 	display: block;
 	z-index: 2016;
-	width: 120px;
 	cursor: pointer;
 }
 

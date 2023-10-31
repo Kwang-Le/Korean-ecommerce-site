@@ -41,6 +41,6 @@ export default {
 .article {
     padding: 5px;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
 }
 </style>
