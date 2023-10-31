@@ -39,9 +39,10 @@
   <script>
     window.fbAsyncInit = function () {
       FB.init({
-        xfbml: false,
+        xfbml: true,
         version: 'v18.0'
       });
+      FB.CustomerChat.hide()
       FB.Event.subscribe('customerchat.dialogHide', 
         FB.CustomerChat.hide
         );
