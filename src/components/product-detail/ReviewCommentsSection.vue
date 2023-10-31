@@ -12,7 +12,7 @@ export default {
     },
     data() {
         return {
-            spaceBetween: 5,
+            spaceBetween: 0,
             modules: [Pagination, Navigation, FreeMode]
         }
     },
