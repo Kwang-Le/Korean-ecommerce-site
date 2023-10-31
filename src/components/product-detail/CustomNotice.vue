@@ -106,6 +106,19 @@ export default {
 <script></script>
 
 <style scoped>
+@media only screen and (max-width: 640px) {
+	.cust-box {
+		margin-left: 0 !important;
+		left: 0 !important;
+	}
+
+	.cust-close {
+		right: 15px !important;
+		margin-right: 15px !important;
+	}
+
+}
+
 .custom-img {
 	position: fixed;
 	right: 20px;
@@ -143,6 +156,7 @@ export default {
 	bottom: 0;
 	position: fixed;
 }
+
 
 .cust-box {
 	width: 100%;
@@ -305,4 +319,5 @@ img {
 .cust-box::-webkit-scrollbar {
 	width: 2px;
 	height: 1px;
-}</style>
+}
+</style>
