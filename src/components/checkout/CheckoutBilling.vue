@@ -1,10 +1,23 @@
 <script>
 export default {
     data() {
-
+        return {
+            price: [37900, 55900, 71900],
+        }
     },
     props: {
-        quantity: Number
+        quantity: Number,
+    },
+    methods: {
+        getPrice() {
+            if (this.$props.quantity == 1){
+                return this.$data.price[0]
+            } else if (this.$props.quantity == 2){
+                return this.$data.price[1]
+            } else if (this.$props.quantity == 3){
+                return this.$data.price[2]
+            }
+        }
     }
 }
 </script>
@@ -31,7 +44,7 @@ export default {
                 </div>
                 <div class="cart-toatal-item d-flex justify-content-between">
                     <span>합계금액： </span>
-                    <span class="checkout-total">₩{{ (quantity * 37900).toLocaleString() }}</span>
+                    <span class="checkout-total">₩{{ this.getPrice().toLocaleString() }}</span>
                 </div>
                 <div class="cart-toatal-item d-flex justify-content-between">
                     <span>행사 할인：</span>
@@ -47,7 +60,7 @@ export default {
                 </div>
                 <div class="cart-toatal-item d-flex justify-content-between last-child">
                     <span>결제금액:</span>
-                    <span class="text-danger checkout-amount">₩{{ (37900 * quantity).toLocaleString() }}</span>
+                    <span class="text-danger checkout-amount">₩{{ this.getPrice().toLocaleString() }}</span>
                 </div>
             </div>
         </div>

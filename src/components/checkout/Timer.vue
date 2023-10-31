@@ -10,7 +10,6 @@ export default {
 	},
 	mounted() {
 		self = this.$data
-		console.log(this.seconds)
 		var timer = 60 * 5;
 		setInterval(() => {
 			self.minutes = parseInt(self.minutes, 10)
@@ -32,9 +31,7 @@ export default {
 			self.seconds = self.seconds < 10 ? "0" + self.seconds : self.seconds;
 			self.miliseconds = self.miliseconds < 10 ? "0" + self.miliseconds : self.miliseconds;
 
-			console.log(self.seconds)
 		}, 100);
-		// this.startTimer()
 	},
 }
 </script>

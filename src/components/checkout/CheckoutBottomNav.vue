@@ -1,7 +1,23 @@
 <script>
 export default {
+    data() {
+        return {
+            price: [37900, 55900, 71900],
+        }
+    },
     props: {
         quantity: Number,
+    },
+    methods: {
+        getPrice() {
+            if (this.$props.quantity == 1){
+                return this.$data.price[0]
+            } else if (this.$props.quantity == 2){
+                return this.$data.price[1]
+            } else if (this.$props.quantity == 3){
+                return this.$data.price[2]
+            }
+        }
     }
 }
 
@@ -10,7 +26,7 @@ export default {
 <template>
     <div class="bottom-nav fixed-bottom nav d-flex justify-content-center align-items-center">
         <div class="service-btn col-3 ">
-            <h3 style="color: red;">₩ {{ (37900 * quantity).toLocaleString() }}</h3>
+            <h3 style="color: red;">₩ {{ getPrice().toLocaleString() }}</h3>
         </div>
         <div class="order-track-btn col-3 d-flex justify-content-end ">
             <h3>총 {{ quantity }} 개</h3>
