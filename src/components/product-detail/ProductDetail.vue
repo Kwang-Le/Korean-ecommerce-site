@@ -30,7 +30,7 @@ export default {
     },
     // setup() {
     //     return {
-           
+
     //     };
     // },
 }
@@ -42,8 +42,8 @@ export default {
     <div class="d-flex flex-column align-items-center">
         <div class="card">
             <div class="slider-wrapper">
-                <swiper-container :autoplay="{ delay: 2000,disableOnInteraction: false }" :slides-per-view="1" :space-between="spaceBetween"
-                    :centered-slides="true" :pagination="{
+                <swiper-container :autoplay="{ delay: 2000, disableOnInteraction: false }" :slides-per-view="1"
+                    :space-between="spaceBetween" :centered-slides="true" :pagination="{
                         hideOnClick: true
                     }" :breakpoints="{
     768: { slidesPerView: 1, },

@@ -2,20 +2,45 @@
 export default {
     data() {
         return {
-            isActiveList: [false, false, false],
-            self: this
+            isActiveList: [[false, false, false], [false, false, false], [false, false, false]],
+            self: this,
         }
     }
     ,
     props: {
         quantity: Number,
+        cartList: Array
     },
     methods: {
-        toggleActive(self, index) {
-            self.isActiveList = self.isActiveList.map((val) => false)
-            self.isActiveList[index] = true
-            console.log(self.isActiveList)
+        toggleActive(self, optionIndex, optionGroupIndex) {
+            self.isActiveList[optionGroupIndex] = self.isActiveList.map((val) => false)
+            if (self.isActiveList[optionGroupIndex][optionIndex] == false){
+                self.isActiveList[optionGroupIndex][optionIndex] = true
+                self.addItemToCart(self, optionIndex, optionGroupIndex)
+            } else{
+                self.isActiveList[optionGroupIndex][optionIndex] = false
+            }
+        },
+        addItemToCart(self, optionIndex, optionGroupIndex) {
+            if (optionIndex == 0){
+                self.cartList[optionGroupIndex] = 'yellow'
+            }else if (optionIndex == 1){
+                self.cartList[optionGroupIndex] = 'red'
+            }else if (optionIndex == 2){
+                self.cartList[optionGroupIndex] = 'blue'
+            }
+            console.log(self.cartList)
+        },
+        checkOptionToggled(self, optionIndex, optionGroupIndex) {
+            if (self.isActiveList[optionGroupIndex][optionIndex] == true) {
+                console.log(self.quantity, optionGroupIndex + 1)
+                return 'active'
+            }
+            return ''
         }
+    },
+    computed: {
+        
     }
 }
 </script>
@@ -28,21 +53,21 @@ export default {
                     <span class="addcart-single-sku col-1 flex-grow-1">(<span class="sku-title-hidden">컬러:</span>브라운
                         )</span>
                 </div>
-                <div v-for="(_, index) in quantity" :key="index" class="addcart-specs-content">
+                <div v-for="(_, optionGroupIndex) in quantity" :key="optionGroupIndex" class="addcart-specs-content">
                     <div class="color">
                         <div class="header">컬러</div>
                         <div class="color-options d-flex flex-wrap">
-                            <div @click="toggleActive(self, 0)" :class="isActiveList[0] ? 'active' : ''" id="0"  class="color-options-img d-flex flex-column align-items-center">
+                            <div @click="toggleActive(self, 0, optionGroupIndex)" :class="checkOptionToggled(self, 0, optionGroupIndex)" id="0"  class="color-options-img d-flex flex-column align-items-center">
                                 <img
                                     src="../../../public/umbrella-product/yellow.jpg">
                                 <p>그레이</p>
                             </div>
-                            <div @click="toggleActive(self, 1)" :class="isActiveList[1] ? 'active' : ''" class="color-options-img d-flex flex-column align-items-center">
+                            <div @click="toggleActive(self, 1, optionGroupIndex)" :class="checkOptionToggled(self, 1, optionGroupIndex)" class="color-options-img d-flex flex-column align-items-center">
                                 <img
                                     src="../../../public/umbrella-product/red.jpg">
                                 <p>그레이</p>
                             </div>
-                            <div @click="toggleActive(self, 2)" :class="isActiveList[2] ? 'active' : ''" class="color-options-img d-flex flex-column align-items-center">
+                            <div @click="toggleActive(self, 2, optionGroupIndex)" :class="checkOptionToggled(self, 2, optionGroupIndex)" class="color-options-img d-flex flex-column align-items-center">
                                 <img
                                     src="../../../public/umbrella-product/blue.jpg">
                                 <p>그레이</p>

@@ -1,3 +1,14 @@
+<script>
+export default {
+    data() {
+
+    },
+    props: {
+        quantity: Number
+    }
+}
+</script>
+
 <template>
     <div class="wrapper-billing">
         <div class="card">
@@ -16,11 +27,11 @@
             <div class="card-body">
                 <div class="cart-toatal-item d-flex justify-content-between">
                     <span>수량：</span>
-                    <span>1</span>
+                    <span>{{quantity}}</span>
                 </div>
                 <div class="cart-toatal-item d-flex justify-content-between">
                     <span>합계금액： </span>
-                    <span class="checkout-total">₩37,900</span>
+                    <span class="checkout-total">₩{{ (quantity * 37900).toLocaleString() }}</span>
                 </div>
                 <div class="cart-toatal-item d-flex justify-content-between">
                     <span>행사 할인：</span>
@@ -36,7 +47,7 @@
                 </div>
                 <div class="cart-toatal-item d-flex justify-content-between last-child">
                     <span>결제금액:</span>
-                    <span class="text-danger checkout-amount">₩37,900</span>
+                    <span class="text-danger checkout-amount">₩{{ (37900 * quantity).toLocaleString() }}</span>
                 </div>
             </div>
         </div>
