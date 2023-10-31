@@ -37,7 +37,10 @@ app.use(router)
 app.use(Paginate)
 app.mount('#app')
 
-FB.CustomerChat.hide();
-FB.CustomerChat.hideDialog();
+FB.Event.subscribe('customerchat.load', ()=>{
+    FB.CustomerChat.hide();
+    FB.CustomerChat.hideDialog();
+});
+
 
 // createApp(App).mount('#app')
