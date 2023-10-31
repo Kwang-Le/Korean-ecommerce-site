@@ -34,6 +34,7 @@
     chatbox.setAttribute("attribution", "biz_inbox");
     chatbox.setAttribute("greeting_dialog_display", "fade");
     chatbox.setAttribute("greeting_dialog_delay", "10");
+    chatbox.style.display = 'none'
   </script>
 
   <!-- Your SDK code -->
@@ -42,13 +43,12 @@
       console.log("it has shown")
     }
     function callbackLoad() {
-      FB.XFBML.parse();
       FB.CustomerChat.hide();
-      
+      document.getElementById('fb-customer-chat').style.display='inline'
     }
     window.fbAsyncInit = function () {
       FB.init({
-        xfbml: false,
+        xfbml: true,
         version: 'v18.0'
       });
       FB.Event.subscribe('customerchat.dialogHide', 
