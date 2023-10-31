@@ -28,11 +28,6 @@ export default {
             console.log('slide changed')
         }
     },
-    // setup() {
-    //     return {
-
-    //     };
-    // },
 }
 </script>
 
