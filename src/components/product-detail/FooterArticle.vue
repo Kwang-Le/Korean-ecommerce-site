@@ -1,3 +1,6 @@
+<script setup>
+import TopFixedBar from '../TopFixedBar.vue';
+</script>
 <script>
 import articles from '../../articles.js'
 export default {
@@ -10,6 +13,7 @@ export default {
 </script>
 
 <template>
+    <TopFixedBar></TopFixedBar>
     <div class="d-flex justify-content-center">
         <div class="wrapper-footer-article">
             <div class="card">

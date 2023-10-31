@@ -1,12 +1,12 @@
 <template>
-    <div class="card my-5" style="width: 640px;">
+    <div class="card my-5" id="item-description" style="width: 640px;">
         <div class="nav-wrapper sticky-top" st>
             <ul class="nav nav-underline justify-content-evenly">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">상품설명</a>
+                    <a class="nav-link" aria-current="page" href="#item-description">상품설명</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">제품규격</a>
+                    <a class="nav-link" href="#notice-section">제품규격</a>
                 </li>
             </ul>
         </div>

@@ -1,8 +1,18 @@
+<script>
+export default {
+    methods: {
+        activateMess() {
+            FB.CustomerChat.show()
+        }
+    }
+}
+</script>
+
 <template>
     <div class="fixed-top border-bottom top-bar text-center">
         <img @click="this.$router.go(-1)" src="../assets/icons/left-arrow.png" alt="" class="return-btn">
         <span>주문 확인</span>
-        <div class="service-btn top-service-btn checkout-top-right qimo-css qimo-service"><i class="bi bi-chat-dots"></i></div>
+        <div class="service-btn top-service-btn checkout-top-right qimo-css qimo-service" @click="activateMess"><i class="bi bi-chat-dots"></i></div>
     </div>
 </template>
 

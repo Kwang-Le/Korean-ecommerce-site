@@ -28,11 +28,6 @@ export default {
             console.log('slide changed')
         }
     },
-    // setup() {
-    //     return {
-           
-    //     };
-    // },
 }
 </script>
 
@@ -42,8 +37,8 @@ export default {
     <div class="d-flex flex-column align-items-center">
         <div class="card">
             <div class="slider-wrapper">
-                <swiper-container :autoplay="{ delay: 2000,disableOnInteraction: false }" :slides-per-view="1" :space-between="spaceBetween"
-                    :centered-slides="true" :pagination="{
+                <swiper-container :autoplay="{ delay: 2000, disableOnInteraction: false }" :slides-per-view="1"
+                    :space-between="spaceBetween" :centered-slides="true" :pagination="{
                         hideOnClick: true
                     }" :breakpoints="{
     768: { slidesPerView: 1, },
@@ -78,7 +73,7 @@ export default {
         </div>
         <ReviewCommentsSection></ReviewCommentsSection>
         <ProductItems></ProductItems>
-        <div class="notice">
+        <div class="notice" id="notice-section">
             <img class="notice-img"
                 src="https://pic.compgoo.com/uploads/546b8ba4659b480393601963ab17a410.jpg?_t=1697876982&_s=2ed8813533314f1ea974632bef81f84f&_token=103cecea93c0b367d8be7fe03cc0f585&_e=10&_c=57209bbf72831121a02d0c990e48673a"
                 alt="">
