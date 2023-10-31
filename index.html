@@ -40,6 +40,9 @@
     function callback() {
       console.log("it has shown")
     }
+    function callbackLoad() {
+      console.log("it has loaded")
+    }
     window.fbAsyncInit = function () {
       FB.init({
         xfbml: true,
@@ -51,6 +54,9 @@
         );
         FB.Event.subscribe('customerchat.show', 
         callback
+        );
+        FB.Event.subscribe('customerchat.load', 
+        callbackLoad
         );
     };
 
