@@ -7,6 +7,7 @@ import ProductList from './components/ProductList.vue';
 import ProductDetail from './components/product-detail/ProductDetail.vue';
 import CheckoutDetail from './components/checkout/CheckoutDetail.vue';
 import FooterArticle from './components/product-detail/FooterArticle.vue';
+import CheckOrder from './components/CheckOrder.vue'
 import Paginate from "vuejs-paginate-next";
 
 const Home = { template: '<div>Home</div>' }
@@ -18,7 +19,8 @@ const routes = [
     { path: '/products', component: ProductList },
     { path: '/product-detail', component: ProductDetail },
     { path: '/checkout-detail', component: CheckoutDetail },
-    { path: '/article/:id', component: FooterArticle }
+    { path: '/article/:id', component: FooterArticle },
+    { path: '/check-order', component: CheckOrder }
 ]
 
 // 3. Create the router instance and pass the `routes` option

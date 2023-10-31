@@ -18,10 +18,10 @@ export default {
         <i class="bi bi-chat-dots"></i>
         <p>서비스센터</p>
     </div>
-    <div class="order-track-btn col-2 d-flex justify-content-center flex-column align-items-center ">
+    <router-link to="/check-order" class="order-track-btn col-2 d-flex justify-content-center flex-column align-items-center ">
         <i class="bi bi-file-text"></i>
         <p>주문 조회</p>
-    </div>
+    </router-link>
     <router-link to="/checkout-detail" class="buy-btn col-8 d-flex align-items-center justify-content-center">
         <p >즉시구매</p>
     </router-link>
