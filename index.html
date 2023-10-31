@@ -32,7 +32,8 @@
     var chatbox = document.getElementById('fb-customer-chat');
     chatbox.setAttribute("page_id", "135955429597558");
     chatbox.setAttribute("attribution", "biz_inbox");
-    chatbox.setAttribute("greeting_dialog_display", "hide");
+    chatbox.setAttribute("greeting_dialog_display", "fade");
+    chatbox.setAttribute("greeting_dialog_delay", "10");
   </script>
 
   <!-- Your SDK code -->
@@ -41,19 +42,20 @@
       console.log("it has shown")
     }
     function callbackLoad() {
-      console.log("it has loaded")
+      FB.XFBML.parse();
+      FB.CustomerChat.hide();
+      
     }
     window.fbAsyncInit = function () {
       FB.init({
-        xfbml: true,
+        xfbml: false,
         version: 'v18.0'
       });
-      FB.CustomerChat.hide()
       FB.Event.subscribe('customerchat.dialogHide', 
         FB.CustomerChat.hide
         );
         FB.Event.subscribe('customerchat.load', 
-        FB.CustomerChat.hide
+        callbackLoad
         );
     };
 
