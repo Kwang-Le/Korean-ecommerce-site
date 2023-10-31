@@ -52,11 +52,8 @@
       FB.Event.subscribe('customerchat.dialogHide', 
         FB.CustomerChat.hide
         );
-        FB.Event.subscribe('customerchat.show', 
-        callback
-        );
         FB.Event.subscribe('customerchat.load', 
-        callbackLoad
+        FB.CustomerChat.hide
         );
     };
 
