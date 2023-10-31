@@ -12,7 +12,7 @@ export default {
     <div class="wrapper-product-detail-footer">
         <div class="card">
             <div class="article text-center">
-                <a v-for="(item, index) in articlesList" :key="index" class="article-item" :href="`/article/${index}`">{{ item.title }} </a>
+                <router-link v-for="(item, index) in articlesList" :key="index" class="article-item" :to="`/article/${index}`">{{ item.title }} </router-link>
                 <!-- <a href="col-4"> example </a> -->
             </div>
         </div>
