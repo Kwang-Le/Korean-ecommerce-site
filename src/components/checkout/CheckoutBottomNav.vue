@@ -48,7 +48,6 @@ export default {
 }
 
 .buy-btn {
-    background: -webkit-linear-gradient(left, #FE7144, #FD4969);
     background-color: #ec4f2a;
     border-radius: 0;
     color: #fff;
