@@ -50,7 +50,7 @@ export default {
         </div>
         <CheckoutProductOptions :quantity="chosenQuantity" :cartList="[null*chosenQuantity]"></CheckoutProductOptions>
         <CheckoutAddressForm></CheckoutAddressForm>
-        <CheckoutCartList></CheckoutCartList>
+        <CheckoutCartList :quantity="chosenQuantity"></CheckoutCartList>
         <CheckoutBilling :quantity="chosenQuantity"></CheckoutBilling>
         <CheckoutPayment ></CheckoutPayment>
         <div class="spacing" style="height: 100px">
